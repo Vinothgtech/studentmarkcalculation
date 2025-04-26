@@ -1,0 +1,25 @@
+body{
+    background: #000;
+    color: rgb(88, 55, 72);
+}
+.frame{
+    height: 200px;
+    width: 300px;
+    background: rgb(150, 132, 132);
+border: 50px solid #000000d7 ;
+border-radius: 10px;
+margin: auto;
+border-left: 50px solid aqua;
+border-right: 50px solid aqua;
+border-top: 50px solid rgb(102, 255, 0);
+border-bottom: 50px solid rgb(187, 192, 192);
+}
+
+
+
+
+.frame .clock{
+    font-size: 40px;
+    text-align: center;
+    line-height: 160px;
+}
