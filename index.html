@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+body{
+background: rgb(58, 52, 52);
+}
+
+.studentmark{
+    text-align: center;
+    background: #010202;
+    /* margin: auto; */
+   width: 100%;
+    padding: 10px;
+    box-shadow:  0 0 30px white;
+    border-radius: 10px;
+}
+
+
+
+
+p{
+    font-size: 25px;
+    color: white;
+}
+input{
+    height: 25px;
+    width: 300px;
+   outline: none;
+   border-radius: 5px;
+   background: #000;
+   border: none;
+   color: white;
+   border: 0.7px solid white;
+
+}
+input::placeholder{
+  color: white;
+}
+input:hover{
+    border:2px solid rgb(0, 255, 13);
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px 20px;
+    background: rgb(6, 248, 6);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+.result{
+    color: white;
+    padding: 10px;
+    
+}
+.span{
+    background: red;
+    width: 400px;
+}
+
+@media screen and (max-width:576px) {
+    input{
+        width: 50%;
+    }
+input::placeholder{
+    font-size: 10px;
+}
+
+}
+    </style>
+</head>
+<body>
+   
+
+   
+    <div class="studentmark">
+
+     <p>Student Mark Calculation</p>
+       <p> <input type="number" placeholder="Enter First Subject Mark" id="first"><span><input type="checkbox" id="firstcheckbox" style="width: 20px;height: 15px;"></span><br></p>
+        <input type="number" placeholder="Enter Second Subject Mark" id="second"><span><input type="checkbox" id="secondcheckbox" style="width: 20px;height: 15px;"></span><br><br>
+        <input type="number" placeholder="Enter Third Subject Mark" id="third"><span><input type="checkbox" id="thirdcheckbox" style="width: 20px;height: 15px;"></span><br><br>
+        <input type="number" placeholder="Enter Fourth Subject Mark" id="fourth"><span><input type="checkbox" id="fourthcheckbox" style="width: 20px;height: 15px;"></span><br><br>
+        <input type="number" placeholder="Enter Fifth Subject Mark" id="fifth"><span><input type="checkbox" id="fifthcheckbox" style="width: 20px;height: 15px;"></span><br><br>
+
+        <div id="totalmark" class="result"><span>Total mark :</span></div>
+        <div id="percentage"  class="result">percentage :</div>
+        <div id="result"  class="result"> Result :</div>
+        <button onclick="studentvalue()">Calculate</button>
+    
+
+    </div>
+
+
+    <script>
+     let sub1 =document.getElementById("first");
+     let sub2 =document.getElementById("second");
+     let sub3 =document.getElementById("third");
+     let sub4 =document.getElementById("fourth");
+     let sub5 =document.getElementById("fifth");
+     let totalmark =document.getElementById("totalmark");
+     let percentage =document.getElementById("percentage");
+     let result =document.getElementById("result")
+     let firstbox =document.getElementById("firstcheckbox");
+     let secondbox =document.getElementById("secondcheckbox");
+     let thirdbox =document.getElementById("thirdcheckbox");
+     let fourthbox =document.getElementById("fourthcheckbox");
+     let fifthbox =document.getElementById("fifthcheckbox");
+
+
+     function studentvalue() {
+
+
+      let subject1 =firstbox.checked ? 0 : Number(sub1.value);
+      let subject2 =secondbox.checked ? 0 :Number(sub2.value);
+      let subject3 =thirdbox.checked ? 0 :Number(sub3.value);
+      let subject4 =fourthbox.checked ? 0 :Number(sub4.value);
+      let subject5 =fifthbox.checked ? 0 :Number(sub5.value);
+    
+// Adding total marks 
+      let total =subject1+subject2+subject3+subject4+subject5;
+         totalmark.textContent='Total mark :' + total;
+
+         let percent =(total/500)*100;
+      
+         percentage.textContent=Math.round(percent)+"%";
+
+
+         if (subject1 >=45 && subject2 >=45 & subject3 >=45 && subject4 >=45 && subject5 >=45) {
+            result.textContent="Pass"
+         }else{
+            result.textContent="Fail"
+         }
+         
+        
+        
+         
+         }
+
+     
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
